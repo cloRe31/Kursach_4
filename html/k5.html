@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/k5.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../js/second-scripts.js"></script>
+    <script src="../js/common.js" defer></script>
     <title>Автосалон Харбор</title>
 </head>
 <body>
@@ -19,17 +19,17 @@
                 <p class="header_right_address">г. Москва, Прокшинский про-кт, 11</p>
                 <div class="header_right_line"></div>
                 <p class="header_phone_number">+7 (906) 607-47-55</p>
-                <div class="header_right_btn openPopupBtn">
-                  <p>заказать звонок</p>
-                  <i class="material-icons header_arrow">chevron_right</i>
-                </div>
+            <button type="button" class="header_right_btn openPopupBtn">
+                  <span>заказать звонок</span>
+                  <i class="material-icons header_arrow" aria-hidden="true">chevron_right</i>
+                </button>
             </div>
         </div>
     </header>
 
     <section class="main-info-block">
         <div class="img-main-info-block">
-          <img src="../img/kia k5/Photos/kia-k5-2.jpg" class="img-main">
+          <img src="../img/kia k5/Photos/kia-k5-2.jpg" class="img-main" alt="Kia K5 в автосалоне Харбор">
         </div>
         <div class="text-main-info-block">
           <div class="title-info-block">
@@ -46,40 +46,40 @@
           <div class="vigod-info">
             <div class="vigod">
               <div>
-                <img src="../svg/ИКОНКА МОЛНИИ КРАСНАЯ.svg" class="main-icons">
+                <img src="../svg/ИКОНКА МОЛНИИ КРАСНАЯ.svg" class="main-icons" alt="">
               </div>
               <div class="vigod-text">Выгода до 635 000 рублей</div>
             </div>
             <div class="vigod">
               <div>
-                <img src="../svg/ИКОНКА ПОВТОРА (СТРЕЛКИ) КРАСНАЯ.svg" class="main-icons">
+                <img src="../svg/ИКОНКА ПОВТОРА (СТРЕЛКИ) КРАСНАЯ.svg" class="main-icons" alt="">
               </div>
               <div class="vigod-text">Скидка по Trade-in до 445 000 ₽</div>
             </div>
             <div class="vigod">
               <div>
-                <img src="../svg/ИКОНКА ЛАЙК КРАСНАЯ.svg" class="main-icons">
+                <img src="../svg/ИКОНКА ЛАЙК КРАСНАЯ.svg" class="main-icons" alt="">
               </div>
               <div class="vigod-text">Техническое обслуживание у дилера</div>
             </div>
             <div class="vigod">
               <div>
-                <img src="../svg/ИКОНКА ОГНЯ КРАСНАЯ.svg" class="main-icons">
+                <img src="../svg/ИКОНКА ОГНЯ КРАСНАЯ.svg" class="main-icons" alt="">
               </div>
               <div class="vigod-text">Оборудование на 150 000 ₽ в подарок</div>
             </div>
             <div class="vigod">
               <div>
-                <img src="../svg/ИКОНКА ЩИТ КРАСНАЯ.svg" class="main-icons">
+                <img src="../svg/ИКОНКА ЩИТ КРАСНАЯ.svg" class="main-icons" alt="">
               </div>
               <div class="vigod-text">Гарантия и поддержка 6 лет</div>
             </div>
           </div>
           <div class="block-button-main">
-            <a class="offer-btn openPopupBtn">
+            <button type="button" class="offer-btn openPopupBtn">
               <span class="btn_text">Получить предложение</span>
               <i class="material-icons white_arrow">chevron_right</i>
-            </a>
+            </button>
             <a class="configuration-btn"  href="#selector">
               <span class="btn_text">Выбрать комплектацию</span>
               <i class="material-icons red_arrow">chevron_right</i>
@@ -167,7 +167,7 @@
                 <form class="test-drive-form" action="#" novalidate="novalidate" method="post">
                   <div class="flex-in-form">
                       <div class="input-test-drive">
-                        <input type="tel" id="phone-input" placeholder="+7" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                        <input type="tel" id="phone-input" name="phone" placeholder="+7" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" inputmode="tel" autocomplete="tel" data-phone-mask="ru" required>
                       </div>
                       <div class="submit-test-drive">
                         <input type="submit" id="submit-phone" value="записаться на тест-драйв">
@@ -206,18 +206,18 @@
                 <div class="second-contact-operation">
                   <span id="operation-time">с 9:00 до 20:00</span>
                 </div>
-                <div class="contact-operation-btn">
-                  <a class="operation-btn openPopupBtn">
-                    <span class="btn_text">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</span>
-                    <i class="material-icons white_arrow operation">chevron_right</i>
-                  </a>
-              </div>
+                    <div class="contact-operation-btn">
+                    <button type="button" class="operation-btn openPopupBtn">
+                      <span class="btn_text">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</span>
+                      <i class="material-icons white_arrow operation">chevron_right</i>
+                    </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="card">
-          <iframe class="card" src="https://yandex.ru/map-widget/v1/?um=constructor%3A69446b247f6868316dc992f2c14de1660b8c121d6a9e209b39ac109f6758f72d&amp;source=constructor" frameborder="0"></iframe>
+          <iframe class="card" src="https://yandex.ru/map-widget/v1/?um=constructor%3A69446b247f6868316dc992f2c14de1660b8c121d6a9e209b39ac109f6758f72d&amp;source=constructor" frameborder="0" title="Карта расположения автосалона" loading="lazy"></iframe>
         </div>
         </section>
 
@@ -269,15 +269,15 @@
             <button class="close-btn" id="closePopupBtn">×</button>
             <h2>Заявка на предложение</h2>
             <form id="applicationForm">
-                <input type="text" placeholder="Имя" required>
-                <input type="tel" placeholder="+7" required>
+                <input type="text" name="customer_name" placeholder="Имя" autocomplete="name" required>
+                <input type="tel" name="customer_phone" placeholder="+7" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" inputmode="tel" autocomplete="tel" data-phone-mask="ru" required>
                 <label class="overlay-text">
-                  <input type="checkbox" required>
+                  <input type="checkbox" name="policy_agreement" value="agree" required>
                   Я согласен с <a href="https://chery-msk.ru/politika/"  target="_blank">правилами обработки персональных данных</a>
                 </label>
                 <button type="submit">Отправить</button>
             </form>
-            <div id="notification" class="notification"></div>
+            <div id="notification" class="notification" role="status" aria-live="polite"></div>
         </div>
     </div>
 

@@ -24,7 +24,8 @@
         url('../fonts/TacticRoundMedium/TacticRound-Med.woff2') format('woff2'),
         url('../fonts/TacticRoundMedium/TacticRound-Med.woff') format('woff'),
         url('../fonts/TacticRoundMedium/TacticRound-Med.ttf') format('truetype');
-    font-style: medium;
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
@@ -33,7 +34,8 @@
         url('../fonts/TacticRoundLight/TacticRound-Lgt.woff2') format('woff2'),
         url('../fonts/TacticRoundLight/TacticRound-Lgt.woff') format('woff'),
         url('../fonts/TacticRoundLight/TacticRound-Lgt.ttf') format('truetype');
-    font-style: light;
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
@@ -43,7 +45,7 @@
         url('../fonts/TacticRoundRegular/TacticRound-Reg.woff') format('woff'),
         url('../fonts/TacticRoundRegular/TacticRound-Reg.ttf') format('truetype');
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 :root{
@@ -78,6 +80,7 @@ h2{
 
 .header_info{
   position: sticky;
+  top: 0;
   font-size: 22px;
   margin: 15px 30px 15px 50px;
 }
@@ -101,53 +104,15 @@ h2{
 
 .logo:visited{
   color: var(--wp-preset-color-black);
-}@font-face {
-    font-family: 'Tactic Round BoldIt';
-    src: local('Tactic Round Bold Italic'), local('Tactic-Round-Bold-Italic'),
-        url('../fonts/TacticRoundBoldIt/TacticRound-BldIt.woff2') format('woff2'),
-        url('../fonts/TacticRoundBoldIt/TacticRound-BldIt.woff') format('woff'),
-        url('../fonts/TacticRoundBoldIt/TacticRound-BldIt.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
 }
 
-@font-face {
-    font-family: 'Tactic Round Bold';
-    src: local('Tactic Round Bold Italic'), local('Tactic-Round-Bold-Italic'),
-        url('../fonts/TacticRoundBold/TacticRound-Bld.woff2') format('woff2'),
-        url('../fonts/TacticRoundBold/TacticRound-Bld.woff') format('woff'),
-        url('../fonts/TacticRoundBold/TacticRound-Bld.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Tactic Round Medium';
-    src: local('Tactic Round Medium'), local('Tactic-Round-Medium'),
-        url('../fonts/TacticRoundMedium/TacticRound-Med.woff2') format('woff2'),
-        url('../fonts/TacticRoundMedium/TacticRound-Med.woff') format('woff'),
-        url('../fonts/TacticRoundMedium/TacticRound-Med.ttf') format('truetype');
-    font-style: medium;
-}
 
-@font-face {
-    font-family: 'Tactic Round Light';
-    src: local('Tactic Round Light'), local('Tactic-Round-Light'),
-        url('../fonts/TacticRoundLight/TacticRound-Lgt.woff2') format('woff2'),
-        url('../fonts/TacticRoundLight/TacticRound-Lgt.woff') format('woff'),
-        url('../fonts/TacticRoundLight/TacticRound-Lgt.ttf') format('truetype');
-    font-style: light;
-}
 
-@font-face {
-    font-family: 'Tactic Round Regular';
-    src: local('Tactic Round Bold Italic'), local('Tactic-Round-Bold-Italic'),
-        url('../fonts/TacticRoundRegular/TacticRound-Reg.woff2') format('woff2'),
-        url('../fonts/TacticRoundRegular/TacticRound-Reg.woff') format('woff'),
-        url('../fonts/TacticRoundRegular/TacticRound-Reg.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-}
+
+
+
+
 
 :root{
     --wp-preset-color-red: rgba(185, 26, 35 , 1);
@@ -238,10 +203,14 @@ h2{
   width: 300px;
   padding: 5px 12px;
   border: 1px solid rgba(0, 0, 0, 0.7);
+  background: transparent;
+  color: var(--wp-preset-color-black);
   align-items: center;
   text-align: center;
   text-transform: uppercase;
   transition: 0.4s ease-in-out;
+  text-decoration: none;
+  appearance: none;
 }
 
 .header_arrow{
@@ -253,10 +222,10 @@ h2{
   background-color: var(--wp-preset-color-red);
   border: 1px solid var(--wp-preset-color-red);
   color: var(--wp-preset-color-full-white);
+}
 
-  .header_arrow{
-    color: var(--wp-preset-color-full-white);
-  }
+.header_right_btn:hover .header_arrow{
+  color: var(--wp-preset-color-full-white);
 }
 
 .main-info-block{
@@ -364,8 +333,11 @@ h2{
     vertical-align: middle;
     padding: 15px 10px;
     text-decoration: none;
+    appearance: none;
+    border: none;
     transition: background 0.4s ease, color 0.4s ease;
     border-radius: 10px;
+    font: inherit;
   }
 
   .offer-btn{
@@ -393,20 +365,20 @@ h2{
   .offer-btn:hover{
     background: var(--wp-preset-color-cool-gray);
     color: var(--wp-preset-color-black);
+  }
 
-    .white_arrow{
-        color: var(--wp-preset-color-red);
-    }
+  .offer-btn:hover .white_arrow{
+    color: var(--wp-preset-color-red);
   }
 
   .configuration-btn:hover{
     background: var(--wp-preset-color-red);
     border: 1px solid var(--wp-preset-color-red);
     color: var(--wp-preset-color-full-white);
+  }
 
-    .red_arrow{
-        color: var(--wp-preset-color-full-white);
-    }
+  .configuration-btn:hover .red_arrow{
+    color: var(--wp-preset-color-full-white);
   }
 
   .configuration-btn .dark-block:hover{
@@ -816,15 +788,18 @@ h2{
     padding-right: 10px;
     border-radius: 10px;
     transition: 0.4s ease;
+    text-decoration: none;
+    appearance: none;
+    font: inherit;
   }
 
   .operation-btn:hover{
     background: rgba(255, 255, 255, 0.8);
     color: var(--wp-preset-color-black);
+  }
 
-    .operation{
-      color: var(--wp-preset-color-red);
-    }
+  .operation-btn:hover .operation{
+    color: var(--wp-preset-color-red);
   }
 
   .operation{

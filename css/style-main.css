@@ -24,7 +24,8 @@
         url('../fonts/TacticRoundMedium/TacticRound-Med.woff2') format('woff2'),
         url('../fonts/TacticRoundMedium/TacticRound-Med.woff') format('woff'),
         url('../fonts/TacticRoundMedium/TacticRound-Med.ttf') format('truetype');
-    font-style: medium;
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
@@ -33,7 +34,8 @@
         url('../fonts/TacticRoundLight/TacticRound-Lgt.woff2') format('woff2'),
         url('../fonts/TacticRoundLight/TacticRound-Lgt.woff') format('woff'),
         url('../fonts/TacticRoundLight/TacticRound-Lgt.ttf') format('truetype');
-    font-style: light;
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
@@ -43,7 +45,7 @@
         url('../fonts/TacticRoundRegular/TacticRound-Reg.woff') format('woff'),
         url('../fonts/TacticRoundRegular/TacticRound-Reg.ttf') format('truetype');
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 :root{
@@ -77,6 +79,7 @@ h2{
 
 .header_info{
   position: sticky;
+  top: 0;
   font-size: 22px;
   margin: 15px 30px 15px 50px;
 }
@@ -135,10 +138,14 @@ h2{
   width: 300px;
   padding: 5px 12px;
   border: 1px solid rgba(0, 0, 0, 0.7);
+  background: transparent;
+  color: var(--wp-preset-color-black);
   align-items: center;
   text-align: center;
   text-transform: uppercase;
   transition: 0.4s ease-in-out;
+  text-decoration: none;
+  appearance: none;
 }
 
 .header_arrow{
@@ -150,10 +157,10 @@ h2{
   background-color: var(--wp-preset-color-red);
   border: 1px solid var(--wp-preset-color-red);
   color: var(--wp-preset-color-full-white);
+}
 
-  .header_arrow{
-    color: var(--wp-preset-color-full-white);
-  }
+.header_right_btn:hover .header_arrow{
+  color: var(--wp-preset-color-full-white);
 }
 
 .car_menu{
@@ -286,7 +293,14 @@ h2{
     margin-top: 10px;
     font-size: 24px;
     text-align: center;
+    display: inline-flex;
+    justify-content: center;
     background: var(--wp-preset-color-red);
+    color: var(--wp-preset-color-full-white);
+    border: 1px solid var(--wp-preset-color-red);
+    text-decoration: none;
+    border-radius: 6px;
+    appearance: none;
     transition: color 0.5s ease, background 0.5s ease;
   }
 
@@ -484,8 +498,11 @@ h2{
     vertical-align: middle;
     padding: 15px 10px;
     text-decoration: none;
+    appearance: none;
+    border: none;
     transition: background 0.4s ease, color 0.4s ease;
     border-radius: 10px;
+    font: inherit;
   }
 
   .offer-btn{
@@ -513,20 +530,20 @@ h2{
   .offer-btn:hover{
     background: var(--wp-preset-color-cool-gray);
     color: var(--wp-preset-color-black);
+  }
 
-    .white_arrow{
-        color: var(--wp-preset-color-red);
-    }
+  .offer-btn:hover .white_arrow{
+    color: var(--wp-preset-color-red);
   }
 
   .configuration-btn:hover{
     background: var(--wp-preset-color-red);
     border: 1px solid var(--wp-preset-color-red);
     color: var(--wp-preset-color-full-white);
+  }
 
-    .red_arrow{
-        color: var(--wp-preset-color-full-white);
-    }
+  .configuration-btn:hover .red_arrow{
+    color: var(--wp-preset-color-full-white);
   }
 
   .dark-block{
@@ -831,15 +848,18 @@ h2{
     padding-right: 10px;
     border-radius: 10px;
     transition: 0.4s ease;
+    text-decoration: none;
+    appearance: none;
+    font: inherit;
   }
 
   .operation-btn:hover{
     background: rgba(255, 255, 255, 0.8);
     color: var(--wp-preset-color-black);
+  }
 
-    .operation{
-      color: var(--wp-preset-color-red);
-    }
+  .operation-btn:hover .operation{
+    color: var(--wp-preset-color-red);
   }
 
   .operation{
@@ -1035,6 +1055,25 @@ h2{
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
+}
+
+.notification {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.notification.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification.error {
+    background-color: #f44336;
+    color: white;
 }
 
 
@@ -1656,12 +1695,6 @@ h2{
     margin-top: 10px;
   }
 }
-
-
-
-
-
-
 
 
 
